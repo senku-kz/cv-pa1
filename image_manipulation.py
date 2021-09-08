@@ -87,8 +87,9 @@ def rgb_decomposition(image, channel):
     #####################################
     #       START YOUR CODE HERE        #
     #####################################
-    rgb = {'R': [1, 0, 0], 'G': [0, 1, 0], 'B': [0, 0, 1]}
-    out = image[:, :, rgb[channel]]
+    rgb = {'R': 0, 'G': 1, 'B': 2}
+    out = np.zeros_like(image)
+    out[:, :, rgb.get(channel)] = image[:, :, rgb.get(channel)]
     ######################################
     #        END OF YOUR CODE            #
     ######################################
